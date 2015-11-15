@@ -10,7 +10,7 @@ RSpec.describe(ItemDatabase) do
     end
     it 'returns found item' do
       item = db.find('Apple')
-      expect(item.name).to eq('Apple')
+      expect(item).to eq('Apple')
     end
   end
 end

@@ -1,17 +1,14 @@
+require 'item'
 class ItemDatabase
   def initialize
-    @items = []
+    @items = Hash.new()
   end
 
   def register(item)
-    @items << item
+    @items.store(item.name,item.price)
   end
 
   def find(name)
-    @items.each do |item|
-      if item.name == name
-        return item
-      end
-    end
+    name if @items.has_key?(name)
   end
 end
